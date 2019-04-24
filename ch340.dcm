@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CH340C
+D CH340C UART USB
+K CH340C CH340
+$ENDCMP
+#
+#End Doc Library

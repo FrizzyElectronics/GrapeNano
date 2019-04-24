@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:GrapeNano-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L atmel:ATMEGA328P-AU U3
+L GrapeNano-rescue:ATMEGA328P-AU-atmel U3
 U 1 1 588F3A7E
 P 6700 3500
 F 0 "U3" H 5950 4750 50  0000 L BNN
@@ -48,7 +48,7 @@ F 3 "" H 10100 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:Resonator_Small Y2
+L GrapeNano-rescue:Resonator_Small-device Y2
 U 1 1 589903E4
 P 8500 3050
 F 0 "Y2" V 8825 3000 50  0000 C CNN
@@ -59,7 +59,7 @@ F 3 "" H 8475 3050 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L switches:SW_Push SW1
+L GrapeNano-rescue:SW_Push-switches SW1
 U 1 1 58990510
 P 5200 4350
 F 0 "SW1" H 5250 4450 50  0000 L CNN
@@ -70,7 +70,7 @@ F 3 "" H 5200 4550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:LED_Small D4
+L GrapeNano-rescue:LED_Small-device D4
 U 1 1 589905E7
 P 8500 4800
 F 0 "D4" V 8546 4732 50  0000 R CNN
@@ -81,7 +81,7 @@ F 3 "" V 8500 4800 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:D_Small_ALT D1
+L GrapeNano-rescue:D_Small_ALT-device D1
 U 1 1 5899073E
 P 1800 2900
 F 0 "D1" V 1846 2832 50  0000 R CNN
@@ -92,7 +92,7 @@ F 3 "" V 1800 2900 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L conn:USB_OTG P1
+L GrapeNano-rescue:USB_OTG-conn P1
 U 1 1 589907F1
 P 1700 4250
 F 0 "P1" H 2025 4125 50  0000 C CNN
@@ -102,29 +102,14 @@ F 3 "" V 1650 4150 50  0001 C CNN
 	1    1700 4250
 	0    -1   1    0   
 $EndComp
-$Comp
-L CH340G_D-SUN-V3.0-cache:CH340G U2
-U 1 1 5C72806C
-P 3300 4150
-F 0 "U2" H 3300 4837 60  0000 C CNN
-F 1 "CH340G" H 3300 4731 60  0000 C CNN
-F 2 "Housings_SOIC:SOIC-16_3.9x9.9mm_Pitch1.27mm" H 3300 3600 40  0001 C CNN
-F 3 "" H 3300 4150 60  0000 C CNN
-	1    3300 4150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2000 4150 2250 4150
 Wire Wire Line
 	2250 4150 2350 4250
 Wire Wire Line
-	2350 4250 2600 4250
-Wire Wire Line
 	2000 4250 2250 4250
 Wire Wire Line
 	2250 4250 2350 4150
-Wire Wire Line
-	2350 4150 2600 4150
 $Comp
 L power:GND #PWR0103
 U 1 1 5C73DEE0
@@ -155,38 +140,6 @@ Wire Wire Line
 	2050 4450 2050 4700
 NoConn ~ 2000 4350
 $Comp
-L device:Resonator_Small Y1
-U 1 1 5C73E2E6
-P 2400 4600
-F 0 "Y1" H 2525 4675 50  0000 L CNN
-F 1 "12MHz" H 2525 4600 50  0000 L CNN
-F 2 "Clocks:RESONATOR-SMD-3.2X1.3" H 2375 4600 50  0001 C CNN
-F 3 "" H 2375 4600 50  0001 C CNN
-	1    2400 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2500 4500 2500 4450
-Wire Wire Line
-	2500 4450 2600 4450
-Wire Wire Line
-	2600 4350 2300 4350
-Wire Wire Line
-	2300 4350 2300 4500
-$Comp
-L power:GND #PWR0105
-U 1 1 5C73E6B1
-P 2400 4850
-F 0 "#PWR0105" H 2400 4600 50  0001 C CNN
-F 1 "GND" H 2400 4700 50  0000 C CNN
-F 2 "" H 2400 4850 50  0001 C CNN
-F 3 "" H 2400 4850 50  0001 C CNN
-	1    2400 4850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 4800 2400 4850
-$Comp
 L power:GND #PWR0106
 U 1 1 5C73E95F
 P 2550 3500
@@ -197,58 +150,26 @@ F 3 "" H 2550 3500 50  0001 C CNN
 	1    2550 3500
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	2550 3750 2600 3750
-Wire Wire Line
-	2600 3850 2400 3850
-Wire Wire Line
-	2600 4050 2100 4050
-Wire Wire Line
-	2100 4050 2100 3800
-$Comp
-L device:C_Small C1
-U 1 1 5C73F321
-P 2100 3700
-F 0 "C1" H 2300 3700 50  0000 R CNN
-F 1 "100n" H 2350 3800 50  0000 R CNN
-F 2 "Capacitors_SMD:C_0603" H 2100 3700 50  0001 C CNN
-F 3 "" H 2100 3700 50  0001 C CNN
-	1    2100 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR0107
-U 1 1 5C73F57A
-P 2100 3500
-F 0 "#PWR0107" H 2100 3350 50  0001 C CNN
-F 1 "+5V" H 2100 3640 50  0000 C CNN
-F 2 "" H 2100 3500 50  0001 C CNN
-F 3 "" H 2100 3500 50  0001 C CNN
-	1    2100 3500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2100 3500 2100 3600
 $Comp
 L power:+5V #PWR0108
 U 1 1 5C73FA2E
-P 4150 3500
-F 0 "#PWR0108" H 4150 3350 50  0001 C CNN
-F 1 "+5V" H 4150 3640 50  0000 C CNN
-F 2 "" H 4150 3500 50  0001 C CNN
-F 3 "" H 4150 3500 50  0001 C CNN
-	1    4150 3500
+P 3550 3500
+F 0 "#PWR0108" H 3550 3350 50  0001 C CNN
+F 1 "+5V" H 3550 3640 50  0000 C CNN
+F 2 "" H 3550 3500 50  0001 C CNN
+F 3 "" H 3550 3500 50  0001 C CNN
+	1    3550 3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4150 3500 4150 3750
+	3550 3500 3550 3750
 Wire Wire Line
-	4150 3750 4000 3750
-NoConn ~ 4000 3850
-NoConn ~ 4000 4250
-NoConn ~ 4000 4150
+	3550 3750 3400 3750
+NoConn ~ 3400 3850
+NoConn ~ 3400 4250
+NoConn ~ 3400 4150
 $Comp
-L device:Polyfuse_Small F1
+L GrapeNano-rescue:Polyfuse_Small-device F1
 U 1 1 5C7403D0
 P 1900 3700
 F 0 "F1" H 1750 3750 50  0000 L CNN
@@ -274,10 +195,8 @@ Wire Wire Line
 	2400 3850 2400 3300
 Wire Wire Line
 	2450 3950 2450 3300
-Wire Wire Line
-	2450 3950 2600 3950
 $Comp
-L device:D_Small_ALT D2
+L GrapeNano-rescue:D_Small_ALT-device D2
 U 1 1 5C742B81
 P 1800 3050
 F 0 "D2" V 1846 3117 50  0000 L CNN
@@ -288,7 +207,7 @@ F 3 "" V 1800 3050 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L device:R_Small R2
+L GrapeNano-rescue:R_Small-device R2
 U 1 1 5C743231
 P 1500 3050
 F 0 "R2" H 1441 3096 50  0000 R CNN
@@ -299,7 +218,7 @@ F 3 "" H 1500 3050 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R_Small R1
+L GrapeNano-rescue:R_Small-device R1
 U 1 1 5C74332C
 P 1500 2900
 F 0 "R1" H 1559 2946 50  0000 L CNN
@@ -314,7 +233,7 @@ Wire Wire Line
 Wire Wire Line
 	1600 2900 1700 2900
 $Comp
-L device:R_Small R3
+L GrapeNano-rescue:R_Small-device R3
 U 1 1 5C744BC1
 P 2350 3150
 F 0 "R3" H 2292 3196 50  0000 R CNN
@@ -325,7 +244,7 @@ F 3 "" H 2350 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R_Small R4
+L GrapeNano-rescue:R_Small-device R4
 U 1 1 5C744C4F
 P 2500 3150
 F 0 "R4" H 2559 3196 50  0000 L CNN
@@ -396,7 +315,7 @@ Wire Wire Line
 Wire Wire Line
 	1900 3050 2200 3050
 $Comp
-L device:C_Small C5
+L GrapeNano-rescue:C_Small-device C5
 U 1 1 5C74BF6B
 P 4400 4050
 F 0 "C5" H 4600 4050 50  0000 R CNN
@@ -414,13 +333,13 @@ Wire Wire Line
 	4400 3850 4400 3950
 Wire Wire Line
 	4400 4150 4400 4250
-Text GLabel 4050 4050 2    39   Input ~ 0
+Text GLabel 3450 4050 2    39   Input ~ 0
 DTR
 Wire Wire Line
-	4000 4050 4050 4050
-NoConn ~ 4000 3950
-NoConn ~ 4000 4350
-NoConn ~ 4000 4450
+	3400 4050 3450 4050
+NoConn ~ 3400 3950
+NoConn ~ 3400 4350
+NoConn ~ 3400 4450
 $Comp
 L power:GND #PWR0111
 U 1 1 5C750A5A
@@ -460,7 +379,7 @@ $EndComp
 Wire Wire Line
 	8700 3050 8750 3050
 $Comp
-L device:C_Small C9
+L GrapeNano-rescue:C_Small-device C9
 U 1 1 5C755AC1
 P 5500 2500
 F 0 "C9" H 5600 2400 50  0000 R CNN
@@ -471,7 +390,7 @@ F 3 "" H 5500 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C_Small C6
+L GrapeNano-rescue:C_Small-device C6
 U 1 1 5C755DCD
 P 5100 2500
 F 0 "C6" H 5050 2600 50  0000 R CNN
@@ -511,7 +430,7 @@ Wire Wire Line
 	5100 2650 5100 2600
 Connection ~ 5100 2600
 $Comp
-L device:C_Small C8
+L GrapeNano-rescue:C_Small-device C8
 U 1 1 5C75FAE9
 P 5650 3150
 F 0 "C8" H 5558 3196 50  0000 R CNN
@@ -544,7 +463,7 @@ Connection ~ 5650 3000
 Text GLabel 5400 3000 0    39   Input ~ 0
 AREF
 $Comp
-L modules:Arduino_Nano_v3.x A1
+L GrapeNano-rescue:Arduino_Nano_v3.x-modules A1
 U 1 1 5C763F92
 P 10050 3650
 F 0 "A1" H 10450 2700 50  0000 C CNN
@@ -713,7 +632,7 @@ VIN
 Wire Wire Line
 	9950 2600 9950 2650
 $Comp
-L device:CP_Small C7
+L GrapeNano-rescue:CP_Small-device C7
 U 1 1 5C780A63
 P 5300 2500
 F 0 "C7" H 5300 2700 50  0000 L CNN
@@ -754,7 +673,7 @@ Wire Wire Line
 	5200 4100 5200 4050
 Connection ~ 5200 4100
 $Comp
-L device:R_Small R5
+L GrapeNano-rescue:R_Small-device R5
 U 1 1 5C78C554
 P 5200 3950
 F 0 "R5" H 5259 3996 50  0000 L CNN
@@ -784,64 +703,64 @@ Wire Wire Line
 Text GLabel 5300 4100 2    39   Input ~ 0
 RESET
 $Comp
-L conn:CONN_02X03 P2
+L GrapeNano-rescue:CONN_02X03-conn P2
 U 1 1 5C7A0CE0
-P 4450 5700
-F 0 "P2" H 4450 6015 50  0000 C CNN
-F 1 "ICSP" H 4450 5924 50  0000 C CNN
-F 2 "Connectors:2X3" H 4450 4500 50  0001 C CNN
-F 3 "" H 4450 4500 50  0001 C CNN
-	1    4450 5700
+P 5500 5650
+F 0 "P2" H 5500 5965 50  0000 C CNN
+F 1 "ICSP" H 5500 5874 50  0000 C CNN
+F 2 "Connectors:2X3" H 5500 4450 50  0001 C CNN
+F 3 "" H 5500 4450 50  0001 C CNN
+	1    5500 5650
 	1    0    0    -1  
 $EndComp
-Text GLabel 4800 5700 2    39   Input ~ 0
+Text GLabel 5850 5650 2    39   Input ~ 0
 D11-MOSI
 Wire Wire Line
-	4700 5600 4800 5600
-Text GLabel 4100 5600 0    39   Input ~ 0
+	5750 5550 5850 5550
+Text GLabel 5150 5550 0    39   Input ~ 0
 D12-MISO
-Text GLabel 4100 5700 0    39   Input ~ 0
+Text GLabel 5150 5650 0    39   Input ~ 0
 D13-SCK
-Text GLabel 4100 5800 0    39   Input ~ 0
+Text GLabel 5150 5750 0    39   Input ~ 0
 RESET
 $Comp
 L power:+5V #PWR0118
 U 1 1 5C7A5765
-P 4800 5550
-F 0 "#PWR0118" H 4800 5400 50  0001 C CNN
-F 1 "+5V" H 4800 5690 50  0000 C CNN
-F 2 "" H 4800 5550 50  0001 C CNN
-F 3 "" H 4800 5550 50  0001 C CNN
-	1    4800 5550
+P 5850 5500
+F 0 "#PWR0118" H 5850 5350 50  0001 C CNN
+F 1 "+5V" H 5850 5640 50  0000 C CNN
+F 2 "" H 5850 5500 50  0001 C CNN
+F 3 "" H 5850 5500 50  0001 C CNN
+	1    5850 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 5550 4800 5600
+	5850 5500 5850 5550
 $Comp
 L power:GND #PWR0119
 U 1 1 5C7A9A8F
-P 4800 5850
-F 0 "#PWR0119" H 4800 5600 50  0001 C CNN
-F 1 "GND" H 4800 5700 50  0000 C CNN
-F 2 "" H 4800 5850 50  0001 C CNN
-F 3 "" H 4800 5850 50  0001 C CNN
-	1    4800 5850
+P 5850 5800
+F 0 "#PWR0119" H 5850 5550 50  0001 C CNN
+F 1 "GND" H 5850 5650 50  0000 C CNN
+F 2 "" H 5850 5800 50  0001 C CNN
+F 3 "" H 5850 5800 50  0001 C CNN
+	1    5850 5800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 5850 4800 5800
+	5850 5800 5850 5750
 Wire Wire Line
-	4800 5800 4700 5800
+	5850 5750 5750 5750
 Wire Wire Line
-	4700 5700 4800 5700
+	5750 5650 5850 5650
 Wire Wire Line
-	4200 5600 4100 5600
+	5250 5550 5150 5550
 Wire Wire Line
-	4100 5700 4200 5700
+	5150 5650 5250 5650
 Wire Wire Line
-	4200 5800 4100 5800
+	5250 5750 5150 5750
 $Comp
-L device:R_Small R6
+L GrapeNano-rescue:R_Small-device R6
 U 1 1 5C7C0006
 P 8500 4500
 F 0 "R6" H 8559 4546 50  0000 L CNN
@@ -946,81 +865,81 @@ Wire Wire Line
 Wire Wire Line
 	7700 4100 7800 4100
 $Comp
-L regul:LM1117-5.0 U1
+L GrapeNano-rescue:LM1117-5.0-regul U1
 U 1 1 5C86D8DE
-P 2400 5650
-F 0 "U1" H 2400 5892 50  0000 C CNN
-F 1 "LM1117-5.0" H 2400 5801 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-223" H 2400 5650 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 2400 5650 50  0001 C CNN
-	1    2400 5650
+P 1750 5900
+F 0 "U1" H 1750 6142 50  0000 C CNN
+F 1 "LM1117-5.0" H 1750 6051 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 1750 5900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 1750 5900 50  0001 C CNN
+	1    1750 5900
 	1    0    0    -1  
 $EndComp
-Text GLabel 2000 5600 1    50   Input ~ 0
+Text GLabel 1350 5850 1    50   Input ~ 0
 VIN
 Wire Wire Line
-	2000 5600 2000 5650
+	1350 5850 1350 5900
 Wire Wire Line
-	2000 5650 2100 5650
+	1350 5900 1450 5900
 $Comp
 L power:GND #PWR0122
 U 1 1 5C8748D0
-P 2400 6000
-F 0 "#PWR0122" H 2400 5750 50  0001 C CNN
-F 1 "GND" H 2400 5850 50  0000 C CNN
-F 2 "" H 2400 6000 50  0001 C CNN
-F 3 "" H 2400 6000 50  0001 C CNN
-	1    2400 6000
+P 1750 6250
+F 0 "#PWR0122" H 1750 6000 50  0001 C CNN
+F 1 "GND" H 1750 6100 50  0000 C CNN
+F 2 "" H 1750 6250 50  0001 C CNN
+F 3 "" H 1750 6250 50  0001 C CNN
+	1    1750 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2400 5950 2400 6000
+	1750 6200 1750 6250
 $Comp
-L device:C_Small C2
+L GrapeNano-rescue:C_Small-device C2
 U 1 1 5C87B1F2
-P 2800 5800
-F 0 "C2" H 3000 5800 50  0000 R CNN
-F 1 "1uF" H 3050 5900 50  0000 R CNN
-F 2 "Capacitors_SMD:C_0603" H 2800 5800 50  0001 C CNN
-F 3 "" H 2800 5800 50  0001 C CNN
-	1    2800 5800
+P 2150 6050
+F 0 "C2" H 2350 6050 50  0000 R CNN
+F 1 "1uF" H 2400 6150 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0603" H 2150 6050 50  0001 C CNN
+F 3 "" H 2150 6050 50  0001 C CNN
+	1    2150 6050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2700 5650 2800 5650
+	2050 5900 2150 5900
 Wire Wire Line
-	2800 5650 2800 5700
+	2150 5900 2150 5950
 $Comp
 L power:GND #PWR0123
 U 1 1 5C881E2E
-P 2800 6000
-F 0 "#PWR0123" H 2800 5750 50  0001 C CNN
-F 1 "GND" H 2800 5850 50  0000 C CNN
-F 2 "" H 2800 6000 50  0001 C CNN
-F 3 "" H 2800 6000 50  0001 C CNN
-	1    2800 6000
+P 2150 6250
+F 0 "#PWR0123" H 2150 6000 50  0001 C CNN
+F 1 "GND" H 2150 6100 50  0000 C CNN
+F 2 "" H 2150 6250 50  0001 C CNN
+F 3 "" H 2150 6250 50  0001 C CNN
+	1    2150 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2800 6000 2800 5900
+	2150 6250 2150 6150
 Wire Wire Line
-	2800 5650 2900 5650
+	2150 5900 2250 5900
 Wire Wire Line
-	2900 5650 2900 5500
-Connection ~ 2800 5650
+	2250 5900 2250 5750
+Connection ~ 2150 5900
 $Comp
 L power:+5V #PWR0124
 U 1 1 5C88FAB9
-P 2900 5500
-F 0 "#PWR0124" H 2900 5350 50  0001 C CNN
-F 1 "+5V" H 2900 5640 50  0000 C CNN
-F 2 "" H 2900 5500 50  0001 C CNN
-F 3 "" H 2900 5500 50  0001 C CNN
-	1    2900 5500
+P 2250 5750
+F 0 "#PWR0124" H 2250 5600 50  0001 C CNN
+F 1 "+5V" H 2250 5890 50  0000 C CNN
+F 2 "" H 2250 5750 50  0001 C CNN
+F 3 "" H 2250 5750 50  0001 C CNN
+	1    2250 5750
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:D_Schottky_Small D3
+L GrapeNano-rescue:D_Schottky_Small-device D3
 U 1 1 5C89014E
 P 6700 5700
 F 0 "D3" H 6700 5800 50  0000 C CNN
@@ -1052,7 +971,7 @@ Wire Wire Line
 Wire Wire Line
 	7000 5700 7000 5500
 $Comp
-L device:CP_Small C3
+L GrapeNano-rescue:CP_Small-device C3
 U 1 1 5C89F877
 P 3100 2800
 F 0 "C3" H 3012 2846 50  0000 R CNN
@@ -1063,7 +982,7 @@ F 3 "" H 3100 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C_Small C4
+L GrapeNano-rescue:C_Small-device C4
 U 1 1 5C89F8F5
 P 3350 2800
 F 0 "C4" H 3442 2846 50  0000 L CNN
@@ -1102,7 +1021,7 @@ VUSB
 Wire Wire Line
 	7850 2900 7850 2200
 $Comp
-L device:LED_Small D5
+L GrapeNano-rescue:LED_Small-device D5
 U 1 1 5C8BFD6E
 P 7850 1800
 F 0 "D5" V 7804 1898 50  0000 L CNN
@@ -1113,7 +1032,7 @@ F 3 "" V 7850 1800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R_Small R7
+L GrapeNano-rescue:R_Small-device R7
 U 1 1 5C8BFD75
 P 7850 2100
 F 0 "R7" H 7909 2146 50  0000 L CNN
@@ -1153,4 +1072,69 @@ Text GLabel 9450 3050 0    39   Input ~ 0
 D0-RX
 Text GLabel 9450 3150 0    39   Input ~ 0
 D1-TX
+$Comp
+L ch340:CH340C U2
+U 1 1 5CC00C4B
+P 3050 4050
+F 0 "U2" H 3050 4575 50  0000 C CNN
+F 1 "CH340C" H 3050 4484 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 2950 4200 50  0001 C CNN
+F 3 "" H 2950 4200 50  0001 C CNN
+	1    3050 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3850 2700 3850
+Wire Wire Line
+	2550 3750 2700 3750
+Wire Wire Line
+	2450 3950 2700 3950
+Wire Wire Line
+	2350 4150 2700 4150
+Wire Wire Line
+	2350 4250 2700 4250
+NoConn ~ 2700 4350
+NoConn ~ 2700 4450
+$Comp
+L power:+5V #PWR0105
+U 1 1 5CBFEC47
+P 5100 2350
+F 0 "#PWR0105" H 5100 2200 50  0001 C CNN
+F 1 "+5V" H 5100 2490 50  0000 C CNN
+F 2 "" H 5100 2350 50  0001 C CNN
+F 3 "" H 5100 2350 50  0001 C CNN
+	1    5100 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 2350 5100 2400
+Connection ~ 5100 2400
+Wire Wire Line
+	2100 4050 2700 4050
+Wire Wire Line
+	2100 3500 2100 3600
+Wire Wire Line
+	2100 4050 2100 3800
+$Comp
+L GrapeNano-rescue:C_Small-device C1
+U 1 1 5C73F321
+P 2100 3700
+F 0 "C1" H 2300 3700 50  0000 R CNN
+F 1 "100n" H 2350 3800 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0603" H 2100 3700 50  0001 C CNN
+F 3 "" H 2100 3700 50  0001 C CNN
+	1    2100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CC330AD
+P 2100 3500
+F 0 "#PWR?" H 2100 3350 50  0001 C CNN
+F 1 "+3.3V" H 2100 3640 50  0000 C CNN
+F 2 "" H 2100 3500 50  0001 C CNN
+F 3 "" H 2100 3500 50  0001 C CNN
+	1    2100 3500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
