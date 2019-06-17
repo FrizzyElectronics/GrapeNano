@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name GrapeNano-rescue)(type Legacy)(uri ${KIPRJMOD}/GrapeNano-rescue.lib)(options "")(descr ""))
+  (lib (name ch340)(type Legacy)(uri ${KIPRJMOD}/ch340.lib)(options "")(descr ""))
 )
